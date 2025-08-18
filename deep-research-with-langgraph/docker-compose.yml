@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  deep-research:
+    build: .
+    container_name: deep-research-course
+    ports:
+      - "8888:8888" # Jupyter Notebook
+    volumes:
+      - ./notebooks:/app/notebooks # Mount notebooks directory
+      - ./data:/app/data # Mount data directory
+      - ./.env:/app/.env # Mount environment file
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=""
+      - JUPYTER_PASSWORD=""
+    working_dir: /app
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token="" --NotebookApp.password=""
+    restart: unless-stopped
