@@ -104,6 +104,7 @@ echo ""
 source /app/.venv/bin/activate
 exec jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root \\
     --NotebookApp.token="" --NotebookApp.password="" \\
+    --NotebookApp.base_url=/jupyter/ \\
     --notebook-dir=/app/notebooks
 EOF
 

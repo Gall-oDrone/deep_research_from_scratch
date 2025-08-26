@@ -1,0 +1,33 @@
+# AWS Configuration
+aws_region = "us-east-1"
+
+# Environment Configuration
+environment = "eks-workshop"
+
+# VPC Configuration
+vpc_cidr = "10.0.0.0/24"
+
+# EC2 Configuration
+instance_type        = "t3.medium"
+instance_volume_size = 30
+
+# Code Server Configuration
+code_server_version = "4.91.1"
+
+# Repository Configuration (optional - for custom repositories)
+repository_owner = "aws-samples"
+repository_name  = "eks-workshop-v2"
+repository_ref   = "main"
+
+# Lab Configuration
+resources_precreated = "false"
+analytics_endpoint   = ""
+
+# Common Tags
+common_tags = {
+  Environment = "eks-workshop"
+  Project     = "deep-research"
+  ManagedBy   = "terraform"
+  Owner       = "your-team"
+  CostCenter  = "your-cost-center"
+}
